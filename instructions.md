@@ -127,6 +127,7 @@ Voici des exemples de données à insérer (tu peux en ajouter d'autres) :
 | 3   | Exercices JavaScript  | https://example.com/js   | Pratique JS          | exercice | false  | 1        |
 | 4   | Créer une API en node | https://example.com/node | Projet node          | projet   | false  | 2        |
 
+
 **Table skills :**
 
 | id  | name       |
@@ -167,3 +168,15 @@ Voici des exemples de données à insérer (tu peux en ajouter d'autres) :
 -   [ ] Récupérer le nom et l'url de toutes les ressources avec un tableau/liste contenant l'ensemble de leurs skills associés
 -   [ ] Récupérer les 5 ressources les plus récentes avec leur thème
 -   [ ] Récupérer toutes les compétences qui ne sont associées à aucune ressource
+
+
+
+CREATE TABLE themes (
+    id SERIAL PRIMARY KEY,  ---TEXTE NORMAL
+    name TEXT NOT NULL, ---TEXTE NORMAL
+    description VARCHAR(255), ---TEXTE TITRE
+    quantity INTEGER, ---TEXTE NORMAL
+    quantity_TWO FLOAT, ---TEXTE NORMAL
+    skills_id INTEGER REFERENCES skills(id)
+    -- skills_name TEXT REFERENCES skills(name)
+);
